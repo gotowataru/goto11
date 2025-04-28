@@ -442,19 +442,6 @@ function fadeToAction(name, duration) {
     // 現在のアニメーション名を更新
     currentActionName = name;
 
-    // もし現在再生中のアクションがあり、それが次のアクションと違うならフェードアウト
-    if (previousAction && previousAction !== nextAction) {
-        previousAction.fadeOut(duration);
-    }
-
-    // 次のアクションを準備してフェードイン・再生
-    nextAction
-        .reset() // アクションをリセット
-        .setEffectiveTimeScale(1) // 再生速度を通常に
-        .setEffectiveWeight(1)    // アクションの影響度を最大に
-        .fadeIn(duration)         // 指定時間でフェードイン
-        .play();                  // 再生開始
-
     // --- アニメーションのループ設定 ---
     // デフォルトはループ再生
     nextAction.setLoop(THREE.LoopRepeat);
