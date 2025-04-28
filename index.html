@@ -7,9 +7,34 @@
     <style>
         body { margin: 0; overflow: hidden; } /* 余白をなくし、スクロールバーを消す */
         canvas { display: block; } /* Canvas要素が余計なスペースを持たないように */
+/* --- ↓↓↓ 操作説明用のスタイルを追加 ↓↓↓ --- */
+        #controls-info {
+            position: absolute; /* 画面左上からの絶対位置指定 */
+            top: 10px;          /* 上から10px */
+            left: 10px;         /* 左から10px */
+            padding: 10px 15px; /* 内側の余白 (上下10px, 左右15px) */
+            background-color: rgba(0, 0, 0, 0.6); /* 少し透けた黒背景 */
+            color: white;       /* 文字色を白に */
+            font-family: sans-serif; /* ゴシック系のフォント */
+            font-size: 14px;    /* 文字サイズ */
+            border-radius: 5px; /* 角を少し丸める */
+            z-index: 10;        /* 他の要素より手前に表示 */
+            white-space: pre-wrap; /* テキスト内の改行をそのまま表示 */
+            line-height: 1.6;   /* 行間を少し広げて見やすく */
+        }
+        /* --- ↑↑↑ スタイル追加終わり --- */
+
+
     </style>
 </head>
 <body>
+    <div id="controls-info">操作方法
+・移動: W A S D / ↑ ← ↓ →
+・ジャンプ: スペースキー
+・パンチ: Pキー
+・おどる: Oキー
+・カメラ回転: マウス左ドラッグ
+・カメラズーム: マウスホイール</div>
     <script type="importmap">
         {
             "imports": {
@@ -19,5 +44,6 @@
         }
     </script>
     <script type="module" src="main.js"></script>
+    
 </body>
 </html>
